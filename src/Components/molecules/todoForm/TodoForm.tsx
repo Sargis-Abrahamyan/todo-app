@@ -1,4 +1,4 @@
-import React from 'react';
+import {memo} from 'react';
 import { TodoFormProps } from './TodoFormProps';
 import { useTodoForm } from './useTodoForm';
 import Button from '../../atoms/Button/Button';
@@ -50,4 +50,4 @@ const TodoForm: React.FC<TodoFormProps> = ({ initialValues, onSubmit, buttonText
     );
 };
 
-export default TodoForm;
+export default memo(TodoForm);

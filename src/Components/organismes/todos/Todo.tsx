@@ -13,7 +13,7 @@ const Todo: React.FC = () => {
         handleFilterChange,
         todos
     } = useTodo();
-
+    
     return (
         <TodoListContainer>
             <TodoFilter handleFilterChange={handleFilterChange} />

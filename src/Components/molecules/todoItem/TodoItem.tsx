@@ -8,7 +8,7 @@ import * as Styled from './todoItem.styled';
 const TodoItem: React.FC<TodoItemProps> = ({ handelEditItem, todo, editingItem }) => {
     const { handelDelete, handelToggleCompleted } = useTodoItem();
     const { id, title, description, completed, deadline } = todo;
-
+    
     return (
         <Styled.TodoItemContainer>
             <Styled.TodoBlock>

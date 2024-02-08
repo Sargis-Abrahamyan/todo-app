@@ -1,4 +1,4 @@
-import React from 'react';
+import {memo} from 'react';
 import Button from '../../atoms/Button/Button';
 import { TodoFilterProps } from './TodoFilterProps';
 import { FilterBlock } from './todoFilter.styled';
@@ -28,4 +28,4 @@ const TodoFilter: React.FC<TodoFilterProps> = ({ handleFilterChange }) => {
     );
 };
 
-export default TodoFilter;
+export default memo(TodoFilter) ;

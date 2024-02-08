@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useCallback } from 'react';
 import { Todo } from '../../../global';
 import { useAppDispatch, useAppSelector } from '../../../Hooks';
 import { addTodo, updateTodo, setFilterCompleted } from '../../../Store/todoSlice';
@@ -28,23 +28,23 @@ export const useTodo = () => {
         }
     });
 
-    const handleFilterChange = (filter: 'all' | 'completed' | 'incomplete') => {
+    const handleFilterChange = useCallback((filter: 'all' | 'completed' | 'incomplete') => {
         dispatch(setFilterCompleted(filter)); //filter todos completed
-    };
+    }, [dispatch]);
 
-    const handelAddTodos = (data: Todo): void => {
+    const handelAddTodos = useCallback((data: Todo): void => {
         dispatch(addTodo(data)); //Add  todo Data
         setEditingItem(null); // Reset the editingItem after adding
-    };
+    }, [dispatch]);
 
-    const handleUpdateItem = (data: Todo) => {
+    const handleUpdateItem = useCallback((data: Todo) => {
         dispatch(updateTodo({ updatedTodo: data, editingItem })); //update  todo Data
         setEditingItem(null);
-    };
+    }, [dispatch, editingItem]);
 
-    const handelEditItem = (todoItem: Todo | null) => {
+    const handelEditItem = useCallback((todoItem: Todo | null) => {
         setEditingItem(todoItem); //set Editing Item
-    };
+    }, []);
 
     return {
         initialValues,

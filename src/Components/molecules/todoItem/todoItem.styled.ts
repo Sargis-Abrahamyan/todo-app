@@ -9,7 +9,6 @@ gap: 5px;
 export const TodoItemContainer = styled.section`
     max-width: 555px;
     height: 100%;
-    flex-shrink: 0;
 `;
 
 export const TodoBlock = styled.ul`
@@ -17,6 +16,8 @@ export const TodoBlock = styled.ul`
 `;
 
 export const TodoItemWrapper = styled.div`
+    width: 100%;
+    max-width: 485px;
     border-bottom: 1px solid rgb(229, 228, 248);
     padding-bottom: 10px;
 `;
